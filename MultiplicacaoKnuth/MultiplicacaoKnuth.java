@@ -1,12 +1,12 @@
 
-public class MultiplicacaoKnuth {
+public class MultiplicacaoKnuth extends TabelaHash{
     private ListaEncadeada[] tabela;
     private int tamanho;
     private final double A = 0.6180339887;
     private int colisoes;
 
     public MultiplicacaoKnuth(int tamanho) {
-        this.tamanho = tamanho;
+        super(tamanho);
         this.colisoes = 0;
         tabela = new ListaEncadeada[tamanho];
         for (int i = 0; i < tamanho; i++) {
@@ -14,7 +14,7 @@ public class MultiplicacaoKnuth {
         }
     }
 
-    private int hash(int chave) {
+    public int hash(int chave) {
         double val = chave * A;
 
         int parteInteira = (int) val;  // truncamento automático
