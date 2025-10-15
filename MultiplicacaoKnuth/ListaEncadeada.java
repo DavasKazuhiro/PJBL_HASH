@@ -20,6 +20,15 @@ public class ListaEncadeada {
         return false;
     }
 
+    public void imprimir(){
+        Node atual = primeiro;
+        while(atual != null){
+            System.out.print(atual.getValor() + " -> ");
+            atual = atual.getProximo();
+        }
+        System.out.println();
+    }
+
     public int getTamanhoLista(){return tamanhoLista;}
     public void setTamanhoLista(int tamanho) {this.tamanhoLista = tamanho;}
 

@@ -1,6 +1,5 @@
 public class MultiplicacaoKnuth extends TabelaHash {
     private ListaEncadeada[] tabela;
-    private final double A = 0.707; // número irracional simples (~√2 / 2)
 
     public MultiplicacaoKnuth(int tamanho) {
         super(tamanho, "Multiplicação Knuth");
@@ -13,7 +12,7 @@ public class MultiplicacaoKnuth extends TabelaHash {
     @Override
     public int hash(int chave) {
         if (chave < 0) chave = -chave;
-        double val = chave * A;
+        double val = chave * 0.61803398870;
         double parteFracionaria = val - (int) val;
         int indice = (int) (tamanho * parteFracionaria);
         return indice;
@@ -124,4 +123,10 @@ public class MultiplicacaoKnuth extends TabelaHash {
         return new int[]{maior, menor, media};
     }
 
+
+    public void imprimir(){
+        for(ListaEncadeada lista: tabela){
+            lista.imprimir();
+        }
+    }
 }
