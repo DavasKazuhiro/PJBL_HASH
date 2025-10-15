@@ -25,7 +25,7 @@ public class Main {
         for (int tamanhoTabela : tamanhosTabelas) {
 
             for (int j = 0; j < vetores.length; j++) {
-                ReHash tabela = new ReHash(tamanhoTabela);
+                RDivisao tabela = new RDivisao(tamanhoTabela);
 
                 // Inserção
                 tabela.setInicioInsersao(System.currentTimeMillis());
