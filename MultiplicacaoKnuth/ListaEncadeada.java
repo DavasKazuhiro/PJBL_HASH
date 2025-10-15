@@ -1,33 +1,10 @@
 public class ListaEncadeada {
     private Node primeiro;
+    private int tamanhoLista;
 
     public ListaEncadeada(){
         this.primeiro = null;
-    }
-
-    public void inserirOrdenado(int valor){
-        if(primeiro == null){
-            primeiro = new Node(valor);
-        }
-        else{
-            Node atual = primeiro;
-            Node anterior = null;
-            Node novo = new Node(valor);
-
-            while(atual.getProximo() != null && atual.getValor() < valor){
-                anterior = atual;
-                atual = atual.getProximo();
-            }
-
-            if(anterior == null){
-                primeiro = novo;
-                novo.setProximo(atual);
-            }
-            else{
-                anterior.setProximo(novo);
-                novo.setProximo(atual);
-            }
-        }
+        this.tamanhoLista = 0;
     }
 
     public boolean buscar(int valor){
@@ -42,6 +19,9 @@ public class ListaEncadeada {
 
         return false;
     }
+
+    public int getTamanhoLista(){return tamanhoLista;}
+    public void setTamanhoLista(int tamanho) {this.tamanhoLista = tamanho;}
 
     public Node getPrimeiro() {
         return primeiro;

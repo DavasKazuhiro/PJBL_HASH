@@ -3,47 +3,78 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        int[] qtds = {100000, 1000000, 10000000};
-        int[] tamanhos = {1000, 10000, 1000000};
-        int limite = 100000000;
-        int seed = 42;
-
+        long seed = 32;
         Random random = new Random(seed);
+        String[][] resultados = new String[27][10];
 
-        MultiplicacaoKnuth tabela1 = new MultiplicacaoKnuth(tamanhos[0]);
-        MultiplicacaoKnuth tabela2 = new MultiplicacaoKnuth(tamanhos[1]);
-        MultiplicacaoKnuth tabela3 = new MultiplicacaoKnuth(tamanhos[2]);
+        int[] tamanhosConjuntos = {100000, 1000000, 10000000};
 
-        int[] numeros1 = new int[qtds[0]];
-        int[] numeros2 = new int[qtds[1]];
-        int[] numeros3 = new int[qtds[2]];
+        int[] vetor1 = new int[tamanhosConjuntos[0]];
+        int[] vetor2 = new int[tamanhosConjuntos[1]];
+        int[] vetor3 = new int[tamanhosConjuntos[2]];
+        int[][] vetores = {vetor1, vetor2, vetor3};
 
-        for(int i = 0; i < qtds[0]; i++){
-            numeros1[i] = random.nextInt(limite);
+        for (int[] vetor : vetores) {
+            preencherVetor(vetor, random);
         }
 
-        for(int i = 0; i < qtds[1]; i++){
-            numeros2[i] = random.nextInt(limite);
-        }
+        int[] tamanhosTabelas = {100000, 10000, 1000};
 
-        for(int i = 0; i < qtds[2]; i++){
-            numeros3[i] = random.nextInt(limite);
-        }
+        // Teste para cada tamanho de tabela e conjunto
+        for (int tamanhoTabela : tamanhosTabelas) {
 
-        for(int n : numeros1){
-            tabela1.inserir(n);
-        }
+            for (int j = 0; j < vetores.length; j++) {
+                MultiplicacaoKnuth tabela = new MultiplicacaoKnuth(tamanhoTabela);
 
-        for(int n : numeros2){
-            tabela2.inserir(n);
-        }
+                // Insersão
+                tabela.setInicioInsersao(System.currentTimeMillis());
+                for (int chave : vetores[j]) {
+                    tabela.inserir(chave);
+                }
+                tabela.setFimInsersao(System.currentTimeMillis());
 
-        for(int n : numeros3){
-            tabela3.inserir(n);
-        }
+                // Busca
+                tabela.setInicioBusca(System.currentTimeMillis());
+                for (int chave : vetores[j]) {
+                    tabela.buscar(chave);
+                }
+                tabela.setFimBusca(System.currentTimeMillis());
 
-        System.out.println(tabela1.getColisoes());
-        System.out.println(tabela2.getColisoes());
-        System.out.println(tabela3.getColisoes());
+                int[] medicoesLista = tabela.medirListas();
+                int primeiraLista = medicoesLista[0];
+                int segundaLista = medicoesLista[1];
+                int terceiraLista = medicoesLista[2];
+
+                int[] medicoesGaps = tabela.medirGaps();
+                int maiorGap = medicoesGaps[0];
+                int menorGap = medicoesGaps[1];
+                int mediaGaps = medicoesGaps[2];
+
+                System.out.println(
+                        tabela.getTipo() + " -> " + tabela.getTamanho() + " Posições -> " + tamanhosConjuntos[j] + " Elementos" +
+                        " -> Colisões: " + tabela.getColisoes() +
+                        " -> Tempo de Insersão: " + tabela.getTempoInsersao() + "ms" +
+                        " -> Tempo de Busca: " + tabela.getTempoBusca() + "ms" +
+                        " -> Maior Lista: " + primeiraLista +
+                        " -> Segunda Lista: " + segundaLista +
+                        " -> Terceira Lista: " + terceiraLista +
+                        " -> Maior Gap: " + maiorGap +
+                        " -> Menor Gap: " + menorGap +
+                        " -> Media Gaps: " + mediaGaps);
+            }
+        }
+    }
+
+    // Gera números aleatórios únicos em cada vetor
+    public static void preencherVetor(int[] vetor, Random random) {
+        Set<Integer> usados = new HashSet<>();
+        int i = 0;
+
+        while (i < vetor.length) {
+            int num = random.nextInt(100_000_000); // espaço grande = menos colisões
+            if (usados.add(num)) { // adiciona só se for novo
+                vetor[i++] = num;
+            }
+        }
     }
 }
