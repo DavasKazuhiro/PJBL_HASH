@@ -1,38 +1,39 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
-public class Main {
-
+public class Teste {
     public static void main(String[] args) {
         long seed = 32;
         Random random = new Random(seed);
-        Resultado[] resultados = new Resultado[27];
-        int indiceResultado = 0;
+        String[][] resultados = new String[27][10];
 
-        int[] tamanhosConjuntos = {100000, 1000000, 10000000};
+        int[] tamanhosConjuntos = {1000};
 
         int[] vetor1 = new int[tamanhosConjuntos[0]];
-        int[] vetor2 = new int[tamanhosConjuntos[1]];
-        int[] vetor3 = new int[tamanhosConjuntos[2]];
-        int[][] vetores = {vetor1, vetor2, vetor3};
+
+        int[][] vetores = {vetor1};
 
         for (int[] vetor : vetores) {
             preencherVetor(vetor, random);
         }
 
-        int[] tamanhosTabelas = {1000, 10000, 100000};
+        int[] tamanhosTabelas = {100};
 
         // Teste para cada tamanho de tabela e conjunto
         for (int tamanhoTabela : tamanhosTabelas) {
 
             for (int j = 0; j < vetores.length; j++) {
-                ReHash tabela = new ReHash(tamanhoTabela);
+                RDivisao tabela = new RDivisao(tamanhoTabela);
 
-                // Inserção
+                // Insersão
                 tabela.setInicioInsersao(System.currentTimeMillis());
                 for (int chave : vetores[j]) {
                     tabela.inserir(chave);
                 }
                 tabela.setFimInsersao(System.currentTimeMillis());
+
+                tabela.imprimir();
 
                 // Busca
                 tabela.setInicioBusca(System.currentTimeMillis());
@@ -50,27 +51,6 @@ public class Main {
                 int maiorGap = medicoesGaps[0];
                 int menorGap = medicoesGaps[1];
                 int mediaGaps = medicoesGaps[2];
-
-                System.out.println(
-                        tabela.getTipo() + " -> " + tabela.getTamanho() + " Posições -> " + tamanhosConjuntos[j] + " Elementos" +
-                                " -> Colisões: " + tabela.getColisoes() +
-                                " -> Tempo de Inserção: " + tabela.getTempoInsersao() + "ms" +
-                                " -> Tempo de Busca: " + tabela.getTempoBusca() + "ms" +
-                                " -> Maior Lista: " + primeiraLista +
-                                " -> Segunda Lista: " + segundaLista +
-                                " -> Terceira Lista: " + terceiraLista +
-                                " -> Maior Gap: " + maiorGap +
-                                " -> Menor Gap: " + menorGap +
-                                " -> Média Gaps: " + mediaGaps);
-
-                resultados[indiceResultado] = new Resultado(
-                        tabela.getTipo(), tabela.getTamanho(), tamanhosConjuntos[j],
-                        tabela.getTempoInsersao(), tabela.getTempoBusca(), tabela.getColisoes(),
-                        primeiraLista, segundaLista, terceiraLista,
-                        maiorGap, menorGap, mediaGaps
-                );
-
-                indiceResultado++;
             }
         }
     }
