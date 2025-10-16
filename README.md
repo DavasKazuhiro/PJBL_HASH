@@ -3,6 +3,9 @@
 Este projeto tem como objetivo comparar o desempenho de diferentes funções hash na inserção e busca de dados, utilizando listas encadeadas e vetores para tratamento de colisões.
 O trabalho faz parte da disciplina de Resolução de Problemas Estruturados em Computação ministrada pelo professor Andrey Cabral Meira e busca demonstrar o impacto de diferentes estratégias de hash na eficiência de uma tabela.
 
+## Como executar 
+
+
 ## Funções Hash Implementadas 
 
 ### 1. Resto da Divisão com multiplicação por Primo Grande
@@ -102,6 +105,7 @@ Davi Kazuhiro Natume
 Pedro Henrique Valente Favero
 Lucas Antonio Pelanda
 
-Disciplina: Estrutura de Dados
-Professor: Resolução de Problemas Estruturados em Computação
+Disciplina: Resolução de Problemas Estruturados em Computação
+Professor: Andrey Cabral Meira
 Instituição: PUCpr
+
