@@ -113,7 +113,40 @@ Cada elemento é um código inteiro de 9 dígitos (ex.: 123456789).
 ## Métricas e Análise de Desempenho
 
 O programa mede automaticamente: Número total de colisões, Tempo total de inserção, Tempo total de busca, Tamanho das três maiores listas encadeadas, Distância média, mínima e máxima entre posições ocupadas (gaps).
-Esses dados são salvos em arquivos dentro da pasta “resultados”.
+Com base nos resultados armazenados no arquivo csv presente neste repositório, foi possível fazer as anáises para os seguintes dados:
+
+### Tempo de Inserção
+
+<img width="1419" height="948" alt="image" src="https://github.com/user-attachments/assets/ef343963-9a67-4148-b506-a39caff654b2" />
+
+<img width="1388" height="948" alt="image" src="https://github.com/user-attachments/assets/da5c8e7a-04ab-4f1c-bf94-90131ce44a00" />
+
+<img width="1388" height="948" alt="image" src="https://github.com/user-attachments/assets/cc9e953c-96b1-4505-a0ad-3b2e21c80141" />
+
+### Número de Colisões
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/96943117-8c26-405b-a5a4-23d798785dbc" />
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/b3b30afc-26b6-4e14-b20d-353e6d95e2f4" />
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/b1840965-9f6f-4bdd-bb21-aebca3e2a8e3" />
+
+### Tempo de Busca
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/e15a19ed-df74-436a-a4ab-51861f8dfa45" />
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/d5dfa521-5b10-4654-a93d-635ee849a34e" />
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/32af4f41-d288-45ad-97f1-c702d6ab949f" />
+
+## Média de Gaps
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/a069994a-e928-405e-b923-092f42161098" />
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/fe09d918-42cd-446a-92be-f3e56d7a9f08" />
+
+<img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/c7c7b2f4-de89-4a3a-af3e-3d863f1a7882" />
+
 
 ## Quem foi melhor e por quê
 
