@@ -17,11 +17,27 @@ Teste.java – Classe auxiliar usada para validação e depuração das funçõe
 
 ## Como executar 
 
-##Métodos de Hash Implementados 
+## Métodos de Hash Implementados 
 
 - Método de resto da divisão com primo grande
 - Método da Multiplicação de Knuth
 - Método
+
+## Tamanhos usados 
+Tabela (vetor da hash)
+
+- 1000, 10000, 100000 (crescimento ×10).
+
+Conjuntos de dados
+
+- 100.000, 1.000.000, 10.000.000 registros.
+
+Seed e formato dos dados
+
+Gerador aleatorio com seed fixa para reprodutibilidade.
+
+Cada elemento é um código inteiro de 9 dígitos (ex.: 123456789).
+(No código usamos int; o gerador garante unicidade por conjunto.)
 
 ##Métricas e Análise de Desempenho
 
