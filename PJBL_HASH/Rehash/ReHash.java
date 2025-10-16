@@ -82,10 +82,6 @@ public class ReHash extends TabelaHash {
         return false;
     }
 
-    public int[] medirListas() {
-       
-        return new int[]{0,0,0};
-    }
     
     public int[] medirGaps() {
         if (tamanho == 0) return new int[]{0,0,0};

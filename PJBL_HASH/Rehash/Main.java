@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         long seed = 32;
         Random random = new Random(seed);
-        Resultado[] resultados = new Resultado[27];
+        Resultado2[] resultados = new Resultado2 [27];
         int indiceResultado = 0;
 
         int[] tamanhosConjuntos = {100000, 1000000, 10000000};
@@ -41,11 +41,6 @@ public class Main {
                 }
                 tabela.setFimBusca(System.currentTimeMillis());
 
-                int[] medicoesLista = tabela.medirListas();
-                int primeiraLista = medicoesLista[0];
-                int segundaLista = medicoesLista[1];
-                int terceiraLista = medicoesLista[2];
-
                 int[] medicoesGaps = tabela.medirGaps();
                 int maiorGap = medicoesGaps[0];
                 int menorGap = medicoesGaps[1];
@@ -56,17 +51,13 @@ public class Main {
                                 " -> Colisões: " + tabela.getColisoes() +
                                 " -> Tempo de Inserção: " + tabela.getTempoInsersao() + "ms" +
                                 " -> Tempo de Busca: " + tabela.getTempoBusca() + "ms" +
-                                " -> Maior Lista: " + primeiraLista +
-                                " -> Segunda Lista: " + segundaLista +
-                                " -> Terceira Lista: " + terceiraLista +
                                 " -> Maior Gap: " + maiorGap +
                                 " -> Menor Gap: " + menorGap +
                                 " -> Média Gaps: " + mediaGaps);
 
-                resultados[indiceResultado] = new Resultado(
+                resultados[indiceResultado] = new Resultado2(
                         tabela.getTipo(), tabela.getTamanho(), tamanhosConjuntos[j],
                         tabela.getTempoInsersao(), tabela.getTempoBusca(), tabela.getColisoes(),
-                        primeiraLista, segundaLista, terceiraLista,
                         maiorGap, menorGap, mediaGaps
                 );
 

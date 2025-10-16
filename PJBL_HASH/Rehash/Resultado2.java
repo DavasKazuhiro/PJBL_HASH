@@ -1,27 +1,21 @@
-public class Resultado {
+public class Resultado2 {
     private String tipoTabela;
     private int tamanhoVetor;
     private int tamanhoConjunto;
     private long tempoInsersao;
     private long tempoBusca;
     private long colisoes;
-    private int primeiraLista;
-    private int segundaLista;
-    private int terceiraLista;
     private int maiorGap;
     private int menorGap;
     private int mediaGap;
 
-    public Resultado(String tipoTabela, int tamanhoVetor, int tamanhoConjunto, long tempoInsersao, long tempoBusca, long colisoes, int primeiraLista, int segundaLista, int terceiraLista, int maiorGap, int menorGap, int mediaGap) {
+    public Resultado2(String tipoTabela, int tamanhoVetor, int tamanhoConjunto, long tempoInsersao, long tempoBusca, long colisoes, int maiorGap, int menorGap, int mediaGap) {
         this.tipoTabela = tipoTabela;
         this.tamanhoVetor = tamanhoVetor;
         this.tamanhoConjunto = tamanhoConjunto;
         this.tempoInsersao = tempoInsersao;
         this.tempoBusca = tempoBusca;
         this.colisoes = colisoes;
-        this.primeiraLista = primeiraLista;
-        this.segundaLista = segundaLista;
-        this.terceiraLista = terceiraLista;
         this.maiorGap = maiorGap;
         this.menorGap = menorGap;
         this.mediaGap = mediaGap;
@@ -44,15 +38,6 @@ public class Resultado {
 
     public long getColisoes() {return colisoes;}
     public void setColisoes(long colisoes) {this.colisoes = colisoes;}
-
-    public int getPrimeiraLista() {return primeiraLista;}
-    public void setPrimeiraLista(int primeiraLista) {this.primeiraLista = primeiraLista;}
-
-    public int getSegundaLista() {return segundaLista;}
-    public void setSegundaLista(int segundaLista) {this.segundaLista = segundaLista;}
-
-    public int getTerceiraLista() {return terceiraLista;}
-    public void setTerceiraLista(int terceiraLista) {this.terceiraLista = terceiraLista;}
 
     public int getMaiorGap() {return maiorGap;}
     public void setMaiorGap(int maiorGap) {this.maiorGap = maiorGap;}
