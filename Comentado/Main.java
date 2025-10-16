@@ -10,7 +10,7 @@ public class Main {
         int indiceResultado = 0;
 
         // CRIACAO DOS CONJUNTOS
-        int[] tamanhosConjuntos = {1000, 10000, 100000};
+        int[] tamanhosConjuntos = {100000, 1000000, 10000000};
         int[][] conjuntos = new int[3][];
         for(int i = 0; i < tamanhosConjuntos.length; i++){
             conjuntos[i] = new int[tamanhosConjuntos[i]];
@@ -20,7 +20,7 @@ public class Main {
         }
 
         // DEFINICAO DOS TAMANHOS DAS TABELAS
-        int[] tamanhosTabelas = {10, 100, 1000};
+        int[] tamanhosTabelas = {1000, 10000, 100000};
 
         for(int tipo = 0; tipo < 3; tipo++){ // PARA CADA TIPO DE TABELA
             for(int tamanhoTabela : tamanhosTabelas){ // PARA CADA TAMANHO DE TABELA
