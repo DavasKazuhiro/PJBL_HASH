@@ -102,10 +102,14 @@ Esses dados são salvos em arquivos dentro da pasta “resultados”.
 ## Autores
 
 Davi Kazuhiro Natume
+
 Pedro Henrique Valente Favero
+
 Lucas Antonio Pelanda
 
 Disciplina: Resolução de Problemas Estruturados em Computação
+
 Professor: Andrey Cabral Meira
+
 Instituição: PUCpr
 
