@@ -6,7 +6,9 @@ O trabalho faz parte da disciplina de Resolução de Problemas Estruturados em C
 ## Como executar 
 
 1 - Clonar o repositório em um caminho que prefirir em sua pasta de arquivos
+
 2 - Abrir o repositorio em um editor de código
+
 3 - Entrar por linha de comando na pasta Comentado ou NaoComentado
 ```java
 cd Comentado
@@ -16,6 +18,7 @@ cd Comentado
 javac Main.java
 ```
 5 - Assim que compilar ira criar um arquivo de classe para cada arquivo .java
+
 6 - Dpois de compilado rodar o código
 ```java
 java Main.java
