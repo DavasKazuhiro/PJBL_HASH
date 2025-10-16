@@ -123,6 +123,11 @@ Com base nos resultados armazenados no arquivo csv presente neste repositório, 
 
 <img width="1388" height="948" alt="image" src="https://github.com/user-attachments/assets/cc9e953c-96b1-4505-a0ad-3b2e21c80141" />
 
+
+### Análise
+- Os gráficos mostram que o tempo de inserção cresce com o tamanho do conjunto em todos os métodos, mas o **Hash Duplo** mantém curvas próximas e quase lineares independentemente do tamanho inicial do vetor (mais estável). Já **Multiplicação (Knuth)** e **Primo Grande** são **altamente sensíveis** à capacidade. Em prática: se houver risco de alta carga, prefira **Hash Duplo** ou superdimensione a tabela para **Knuth/Primo** a fim de manter o fator de carga baixo.
+
+
 ### Número de Colisões
 
 <img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/96943117-8c26-405b-a5a4-23d798785dbc" />
@@ -130,6 +135,10 @@ Com base nos resultados armazenados no arquivo csv presente neste repositório, 
 <img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/b3b30afc-26b6-4e14-b20d-353e6d95e2f4" />
 
 <img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/b1840965-9f6f-4bdd-bb21-aebca3e2a8e3" />
+
+### Análise
+
+- Com o vetor maior, o número de colisões cai. Primo Grande começa muito alto e despenca; Hash Duplo já é baixo e reduz um pouco mais. A linha de Multiplicação (Knuth) não aparece porque está sobreposta (fica atrás, praticamente igual à do Hash Duplo).
 
 ### Tempo de Busca
 
@@ -139,6 +148,10 @@ Com base nos resultados armazenados no arquivo csv presente neste repositório, 
 
 <img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/32af4f41-d288-45ad-97f1-c702d6ab949f" />
 
+### Análise
+
+- Aumentar o tamanho inicial do vetor reduz fortemente o tempo de busca em todos os métodos. Com vetor pequeno (1k), Multiplicação (Knuth) e Primo Grande têm tempos muito altos (explodem nos conjuntos maiores) e depois despencam à medida que o vetor cresce (10k → 100k). Já o Hash Duplo se mantém muito baixo e estável em todos os tamanhos, sendo o mais consistente.
+
 ## Média de Gaps
 
 <img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/a069994a-e928-405e-b923-092f42161098" />
@@ -147,6 +160,9 @@ Com base nos resultados armazenados no arquivo csv presente neste repositório, 
 
 <img width="1980" height="1180" alt="image" src="https://github.com/user-attachments/assets/c7c7b2f4-de89-4a3a-af3e-3d863f1a7882" />
 
+### Análise
+
+- Ao aumentar o tamanho inicial do vetor, o Hash Duplo cai de ~2 para ~1 e estabiliza (comportamento consistente). O Primo Grande sobe de ~0 para perto de 1 conforme o vetor cresce, convergindo para o mesmo patamar do Hash Duplo. Já a Multiplicação (Knuth) fica em ~0 em todos os pontos deste conjunto de testes; por isso, a linha pode não aparecer ou parecer “colada” ao eixo/à outra curva.
 
 ## Quem foi melhor e por quê
 
@@ -182,5 +198,5 @@ Disciplina: Resolução de Problemas Estruturados em Computação
 
 Professor: Andrey Cabral Meira
 
-Instituição: PUCpr
+Instituição: PUCPR
 
