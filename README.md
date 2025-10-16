@@ -97,7 +97,27 @@ Cada elemento é um código inteiro de 9 dígitos (ex.: 123456789).
 O programa mede automaticamente: Número total de colisões, Tempo total de inserção, Tempo total de busca, Tamanho das três maiores listas encadeadas, Distância média, mínima e máxima entre posições ocupadas (gaps).
 Esses dados são salvos em arquivos dentro da pasta “resultados”.
 
+## Quem foi melhor e por quê
+
+Depois de rodar todos os testes com as três funções, Resto da Divisão, Multiplicação de Knuth e Hash Duplo, deu pra ver com clareza que o Hash Duplo foi o que se saiu melhor no geral.
+
+Ele teve o menor número de colisões, principalmente nas tabelas maiores, e manteve uma boa distribuição dos valores. Isso acontece porque ele usa duas funções diferentes pra calcular as posições, o que evita aquele acúmulo de dados em poucos lugares da tabela.
+Resumindo: o Hash Duplo espalha bem melhor as chaves, e isso faz diferença quando a quantidade de dados cresce muito.
+
+A Multiplicação de Knuth também foi muito bem. Ela é simples, tem um comportamento estável e uma boa dispersão. É uma função bem equilibrada, nem a mais rápida, mas tambem não é a mais complexa, e entrega resultados bons.
+
+Já o método do Resto da Divisão, acabou gerando mais colisões quando a tabela ficou cheia. Isso acontece porque ele depende bastante do tamanho do vetor e do tipo dos números usados, então em volumes grandes ele começa a perder eficiência.
 ## Conclusão
+
+Com a realização dos testes, foi possível observar de forma clara que o desempenho das funções de hash varia bastante conforme o método utilizado e o volume de dados processados. O Hash Duplo apresentou o melhor resultado geral, mostrando alta eficiência e uma excelente distribuição das chaves, mesmo em tabelas grandes. Isso demonstra que o uso de duas funções distintas reduz significativamente as colisões e melhora a dispersão dos valores.
+
+A função de Multiplicação de Knuth também apresentou resultados positivos, sendo uma boa alternativa por equilibrar simplicidade e desempenho. Sua implementação é prática e mantém um comportamento satizfatorio.
+
+Por outro lado, o método do Resto da Divisão, apesar de ser o mais simples e intuitivo, mostrou algumas dificuldades em grandes volumes de dados, resultando em um número mais elevado de colisões. Isso destaca a importância de considerar bastante o tamanho e as características do conjunto de dados antes de definir a função de hash a ser utilizada.
+
+Resumeindo, o trabalho mostrou que não há uma função de hash ideal, mas sim métodos que se adequam melhor a diferentes contextos. O Hash Duplo se destacou pela eficiência e distribuição, a Multiplicação de Knuth pela estabilidade e praticidade, e o Resto da Divisão pela simplicidade.
+
+Então vemos a importância de compreender os fundamentos por trás das funções de hash, pois a escolha correta do método impacta diretamente na performance e na confiabilidade das estruturas de dados.
 
 ## Autores
 
